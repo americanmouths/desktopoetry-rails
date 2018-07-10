@@ -40,6 +40,10 @@ a.navbar-brand.title,
   color: #bd8c7d;
 }
 
+h2 {
+  color: #bd8c7d;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #49494b;
   font-family: 'Pathway Gothic One', sans-serif;
@@ -52,4 +56,10 @@ a.navbar-brand.title,
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
     color: #d1bfa7;
+}
+
+input#user_email,
+input#user_password {
+  padding: 6px;
+  margin-left: 13px;
 }
