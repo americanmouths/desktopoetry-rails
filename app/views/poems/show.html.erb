@@ -1,6 +1,7 @@
 <div class="card text-center mx-auto mb-5" style="width: 40rem;">
   <div class="card-header">
     <h2><u><%= @poem.title %></u></h2>
+     <%= @poem.date %>
   </div>
   <div class="card-body">
     <p class="card-text">
@@ -8,6 +9,6 @@
     </p>
   </div>
   <div class="card-footer text-muted">
-    <%= @poem.category_name %>
+    Categories: <%= link_to @category.name, category_path(@category.id) %>
   </div>
 </div>
