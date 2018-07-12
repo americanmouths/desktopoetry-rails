@@ -1,0 +1,4 @@
+<% @poems.each do |poem| %>
+  Title: <%= poem.title %><br />
+  Content: <p><%= simple_format poem.content %></p>
+<% end %>

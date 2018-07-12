@@ -24,7 +24,10 @@
             <%= link_to "New", new_poem_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users/sign_in">Another thing</a>
+            <%= link_to "Your Poems", poems_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Your categories", categories_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/users/sign_out" data-method="delete"> Log Out</a>

@@ -1,5 +1,9 @@
 class PoemsController < ApplicationController
 
+  def index
+    @poems = current_user.poems
+  end 
+
   def new
     @poem = Poem.new
   end
