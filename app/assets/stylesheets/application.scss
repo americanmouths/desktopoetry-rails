@@ -63,3 +63,16 @@ input#user_password {
   padding: 6px;
   margin-left: 13px;
 }
+
+.notice,
+.alert {
+  color: #d1bfa7;
+  text-decoration: underline;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.poem-content {
+  width: 400px;
+  height: 250px;
+}
