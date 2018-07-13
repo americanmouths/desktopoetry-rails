@@ -1,4 +1,3 @@
 <% @poems.each do |poem| %>
-  Title: <%= poem.title %><br />
-  Content: <p><%= simple_format poem.content %></p>
+  <%= render partial: 'showcard', locals: {poem: poem, category: poem.category_name} %>
 <% end %>

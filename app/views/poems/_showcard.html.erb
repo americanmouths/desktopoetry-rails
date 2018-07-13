@@ -1,0 +1,16 @@
+<div class="card text-center mx-auto mb-5" style="width: 30rem;">
+  <div class="card-header poem-header">
+    <h2 class="poem-header"><u><%= poem.title %></u></h2>
+     <%= poem.date %>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <%= simple_format poem.content %>
+    </p>
+  </div>
+  <div class="card-footer poem-footer">
+    <p class="poem-footer">
+      <%= poem.category_name %>
+    </p>
+  </div>
+</div>
