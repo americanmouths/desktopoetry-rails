@@ -1,14 +1,1 @@
-<div class="card text-center mx-auto mb-5" style="width: 40rem;">
-  <div class="card-header">
-    <h2><u><%= @poem.title %></u></h2>
-     <%= @poem.date %>
-  </div>
-  <div class="card-body">
-    <p class="card-text">
-      <%= simple_format @poem.content %>
-    </p>
-  </div>
-  <div class="card-footer text-muted">
-    Categories: <%= link_to @category.name, category_path(@category.id) %>
-  </div>
-</div>
+<%= render partial: 'showcard', locals: {poem: @poem, category: @category} %>
