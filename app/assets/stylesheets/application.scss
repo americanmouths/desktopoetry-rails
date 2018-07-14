@@ -22,6 +22,8 @@ Soft Gold: #d1bfa7
 Silver: #8e8e90
 
 Onyx: #49494b
+
+Darker Silver: #626263;
 */
 
  @import "bootstrap";
@@ -33,6 +35,10 @@ Onyx: #49494b
    font-family: 'Pathway Gothic One', sans-serif;
  }
 
+p {
+  font-size: 1.2em;
+}
+
 a.navbar-brand.title,
 .title {
   font: 100% 'IM Fell Great Primer', serif;
@@ -42,12 +48,17 @@ a.navbar-brand.title,
 
 h2 {
   color: #bd8c7d;
+  font-family: 'IM Fell Great Primer', serif;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: #49494b;
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 1.3em;
+}
+
+.navbar {
+  border-bottom: 1px solid #49494b;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -58,17 +69,11 @@ h2 {
     color: #d1bfa7;
 }
 
-input#user_email,
-input#user_password {
-  padding: 6px;
-  margin-left: 13px;
-}
-
 .notice,
 .alert {
-  color: #d1bfa7;
+  color: #49494b;
   text-decoration: underline;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-top: 10px;
 }
 
@@ -77,12 +82,40 @@ input#user_password {
   height: 250px;
 }
 
-.poem-header {
-  background-color: #49494b;
+.poem-category-link,
+.poem-card-link {
   color: #bd8c7d;
 }
 
-.poem-footer {
-  background-color: #49494b;
+.poem-category-link:hover,
+.poem-card-link:hover {
+  text-decoration: none;
   color: #d1bfa7;
+}
+
+.poem {
+  text-align: left;
+}
+
+.btn-primary-spacing {
+  margin-right: 10px;
+}
+
+input#poem_title,
+input#poem_date,
+input#poem_category_name,
+input {
+  display: block;
+  height: 50%;
+  width: 50%;
+  color: #bd8c7d;
+}
+
+textarea#poem_content{
+  color: #bd8c7d;
+}
+
+label {
+  font-size: 1.3em;
+  text-align: center;
 }
