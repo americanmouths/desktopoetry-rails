@@ -10,6 +10,7 @@ class PoemsController < ApplicationController
 
   def create
     @poem = Poem.create(poem_params)
+    @poem.category.user_id = current_user.id
     if @poem.save
       redirect_to poem_path(@poem)
     else
