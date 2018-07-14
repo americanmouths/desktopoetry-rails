@@ -1,5 +1,6 @@
 class Poem < ApplicationRecord
   belongs_to :category
+  belongs_to :user
 
   def category_name=(name)
      self.category = Category.find_or_create_by(name: name)
@@ -8,5 +9,5 @@ class Poem < ApplicationRecord
    def category_name
       self.category ? self.category.name : nil
    end
-   
+
 end
