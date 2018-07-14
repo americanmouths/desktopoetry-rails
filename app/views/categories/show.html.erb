@@ -1,0 +1,4 @@
+<h2>Poems in <%= @category.name %></h2>
+<% @category.poems.each do |poem| %>
+  <h2><%= poem.title %></h2>
+<% end %>
