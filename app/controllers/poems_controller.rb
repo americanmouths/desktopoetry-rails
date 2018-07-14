@@ -1,8 +1,8 @@
 class PoemsController < ApplicationController
 
   def index
-    @poems = current_user.poems
-  end 
+    @poems = current_user.poems.order(id: :desc)
+  end
 
   def new
     @poem = Poem.new
@@ -10,12 +10,32 @@ class PoemsController < ApplicationController
 
   def create
     @poem = Poem.create(poem_params)
-    redirect_to poem_path(@poem)
+    if @poem.save
+      redirect_to poem_path(@poem)
+    else
+      render :new
+    end
   end
 
   def show
     @poem = Poem.find_by(id: params[:id])
     @category = Category.find_by(name: @poem.category_name)
+  end
+
+  def edit
+    @poem = Poem.find_by(id: params[:id])
+  end
+
+  def update
+    @poem = Poem.find_by(id: params[:id])
+    @poem.update(poem_params)
+    redirect_to poem_path(@poem)
+  end
+
+  def destroy
+    @poem = Poem.find_by(id: params[:id])
+    @poem.destroy
+    redirect_to poems_path
   end
 
   private
