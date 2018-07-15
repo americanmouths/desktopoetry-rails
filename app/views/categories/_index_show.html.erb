@@ -1,4 +1,4 @@
-<div class="card border-dark mb-3 mx-auto text-center" style="max-width: 18rem;">
+<div class="card border-dark mb-3 mx-auto text-center" style="max-width: 32rem;">
   <div class="card-header border-secondary"><h2><%= link_to category.name, category_path(category.id), class: "category-card-link"%></h2></div>
   <div class="card-body text-dark">
     <p class="card-text">
@@ -8,7 +8,7 @@
       Poems in this category:
       <ul>
         <% category.poems.each do |poem| %>
-          <li class="text-left"><%= link_to poem.title, poem_path(poem.id), class: "poem-category-link" %></li>
+          <li class="text-left"><%= link_to poem.title, poem_path(poem.id), class: "category-poem-link" %></li>
         <% end %>
       </ul>
     </p>
