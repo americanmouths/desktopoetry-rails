@@ -1,0 +1,7 @@
+<%= render partial: 'layouts/errors', locals: {object: @category} %>
+<div class="card text-center mx-auto mb-5" style="width: 37rem;">
+  <div class="card-header">
+    <h2>Edit <%= @category.name %></h2>
+  </div>
+  <%= render partial: 'form', locals: {category: @category} %>
+</div>

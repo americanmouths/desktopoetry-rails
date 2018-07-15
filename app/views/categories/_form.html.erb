@@ -1,0 +1,23 @@
+<div class="card-body text-left">
+  <p class="card-text">
+  <%= form_for category do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <br />
+    <div class="field">
+    Select a poem to add to this category:<br><br>
+      <%= f.collection_check_boxes :poem_ids, current_user.poems, :id, :title, :checked => false, :include_hidden => false %>
+      <br />
+  </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn btn-block btn-dark" %>
+    </div>
+  <% end %>
+    </p>
+  </div>
+  <div class="card-footer text-muted">
+    desktopoetry
+  </div>
