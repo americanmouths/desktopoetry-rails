@@ -83,12 +83,14 @@ h2 {
 }
 
 .poem-category-link,
-.poem-card-link {
+.poem-card-link,
+.category-card-link {
   color: #bd8c7d;
 }
 
 .poem-category-link:hover,
-.poem-card-link:hover {
+.poem-card-link:hover,
+.category-card-link:hover {
   text-decoration: none;
   color: #d1bfa7;
 }
@@ -104,7 +106,9 @@ h2 {
 input#poem_title,
 input#poem_date,
 input#poem_category_name,
-input {
+input#user_name,
+input#user_email,
+input#category_name {
   display: block;
   height: 50%;
   width: 50%;
@@ -117,9 +121,12 @@ textarea#poem_content{
 
 label {
   font-size: 1.3em;
-  text-align: center;
 }
 
 .welcome {
   color: white;
+}
+
+input[type="checkbox"] {
+  margin: 10px;
 }
