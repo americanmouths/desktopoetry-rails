@@ -1,4 +1,5 @@
 class PoemsController < ApplicationController
+  before_action :authorize
 
   def index
     @poems = current_user.poems.order(id: :desc)
