@@ -84,15 +84,21 @@ h2 {
 
 .poem-category-link,
 .poem-card-link,
-.category-card-link {
+.category-card-link,
+.category-poem-link {
   color: #bd8c7d;
 }
 
 .poem-category-link:hover,
 .poem-card-link:hover,
-.category-card-link:hover {
+.category-card-link:hover,
+.category-poem-link:hover {
   text-decoration: none;
   color: #d1bfa7;
+}
+
+.category-poem-link {
+  font-size: 1.2em;
 }
 
 .poem {
@@ -129,4 +135,8 @@ label {
 
 input[type="checkbox"] {
   margin: 10px;
+}
+
+#error_explanation {
+  text-align: center;
 }
