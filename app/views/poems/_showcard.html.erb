@@ -8,7 +8,7 @@
       <%= simple_format poem.content, class: "poem" %>
       </p>
       <p class="text-center">
-        <%= link_to "#" + poem.category_name, categories_path(poem.category_id), class: "poem-category-link" %>
+        <%= link_to "#" + poem.category_name, category_path(poem.category_id), class: "poem-category-link" %>
       </p>
     </div>
     <div class="card-footer text-muted border-secondary">
