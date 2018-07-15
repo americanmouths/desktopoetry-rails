@@ -6,7 +6,8 @@ class Poem < ApplicationRecord
   validates :content, :presence => true
 
   def category_name=(name)
-     self.category = Category.find_or_create_by(name: name)
+    @name = name.titlecase
+     self.category = Category.find_or_create_by(name: @name)
    end
 
    def category_name
