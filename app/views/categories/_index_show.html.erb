@@ -1,0 +1,20 @@
+<div class="card border-dark mb-3 mx-auto text-center" style="max-width: 18rem;">
+  <div class="card-header border-secondary"><h2><%= link_to category.name, category_path(category.id), class: "category-card-link"%></h2></div>
+  <div class="card-body text-dark">
+    <p class="card-text">
+      <% if category.poems.length < 1 %>
+      Looks like there are no poems in this category
+      <% else %>
+      Poems in this category:
+      <ul>
+        <% category.poems.each do |poem| %>
+          <li class="text-left"><%= link_to poem.title, poem_path(poem.id), class: "poem-category-link" %></li>
+        <% end %>
+      </ul>
+    </p>
+    <% end %>
+  </div>
+  <div class="card-footer text-muted border-secondary">
+    <%= link_to "Edit", edit_category_path(category.id), class: "btn btn btn-secondary btn-sm col-xs-2 btn-primary-spacing"%><%= link_to "Delete", category_path(category.id), :method => "delete", class: "btn btn btn-secondary btn-sm col-xs-2 btn-primary-spacing"%>
+  </div>
+</div>

@@ -1,3 +1,8 @@
+<div class="card text-center mx-auto mb-5" style="width: 32rem; background-color: #626263;">
+  <div class="card-header">
+    <center><h2>Your Categories</h2></center>
+  </div>
+</div>
 <% @categories.each do |category| %>
-  <h2><%= link_to category.name, category_path(category.id) %></h2>
+  <%= render partial: "index_show", locals: {category: category} %>
 <% end %>
