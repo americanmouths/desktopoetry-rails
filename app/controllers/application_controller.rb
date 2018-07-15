@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || root_path
   end
 
-  def authorize
-    redirect_to '/' unless current_user
-    flash[:notice] = "You must be logged in to do that"
+  rescue_from CanCan::AccessDenied do |exception|
+  respond_to do |format|
+    format.json { head :forbidden, content_type: 'text/html' }
+    format.html { redirect_to main_app.root_url, notice: exception.message }
+    format.js   { head :forbidden, content_type: 'text/html' }
   end
+end
 end

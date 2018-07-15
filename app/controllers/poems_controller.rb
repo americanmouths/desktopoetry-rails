@@ -1,16 +1,19 @@
 class PoemsController < ApplicationController
-  before_action :authorize
-
+  load_and_authorize_resource
+  
   def index
+    authorize! :read, Poem
     @poems = current_user.poems.order(id: :desc)
   end
 
   def new
+    authorize! :create, Poem
     @poem = Poem.new
   end
 
   def create
     @poem = Poem.create(poem_params)
+    authorize! :create, Poem
     @poem.category.user_id = current_user.id
     if @poem.save
       redirect_to poem_path(@poem)
@@ -22,6 +25,7 @@ class PoemsController < ApplicationController
   def show
     @poem = Poem.find_by(id: params[:id])
     @category = Category.find_by(name: @poem.category_name)
+    authorize! :read, Poem
   end
 
   def edit
@@ -30,12 +34,14 @@ class PoemsController < ApplicationController
 
   def update
     @poem = Poem.find_by(id: params[:id])
+    authorize! :update, Poem
     @poem.update(poem_params)
     redirect_to poem_path(@poem)
   end
 
   def destroy
     @poem = Poem.find_by(id: params[:id])
+    authorize! :destroy, Poem
     @poem.destroy
     redirect_to poems_path
   end
