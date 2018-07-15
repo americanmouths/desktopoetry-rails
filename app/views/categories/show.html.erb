@@ -1,4 +1,8 @@
-<h2>Poems in <%= @category.name %></h2>
+<div class="card text-center mx-auto mb-5" style="width: 32rem; background-color: #626263;">
+  <div class="card-header">
+    <center><h2>Poems in #<%= @category.name %></h2></center>
+  </div>
+</div>
 <% @category.poems.each do |poem| %>
-  <h2><%= poem.title %></h2>
+  <%= render partial: "poems/showcard", locals: {poem: poem, category: poem.category} %>
 <% end %>
