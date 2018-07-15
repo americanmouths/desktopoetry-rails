@@ -4,10 +4,8 @@
       <%= pluralize(object.errors.count, "error") %>
       prohibited this from being saved:
     </h2>
-    <ul>
-    <%= object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% object.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
     <% end %>
-    </ul>
   </div>
 <% end %>
